@@ -22,10 +22,10 @@ function gameBlackjack(array) {
 	//for array.length
 	//if array[i] = 2 => result += 2
 	//case A if(result <= 10) result += 11 else result += 1
-	 
+
 	//array = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 	var result = 0;
-	for(var i = 0; i< array.length;i++){
+	for(var i = 0; i < array.length; i++){
 
 		switch(array[i]) {
 			case "2":
@@ -86,9 +86,9 @@ function gameBlackjack(array) {
             }			
 			
 			break;
-
 		}
 	}
+	
     if(result <= 21){
     	return result;
     }
