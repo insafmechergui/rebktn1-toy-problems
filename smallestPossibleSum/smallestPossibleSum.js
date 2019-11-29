@@ -1,4 +1,5 @@
-// Given an array X of positive integers, its elements are to be transformed by running the following operation on them as many times as required:
+// Given an array X of positive integers, its elements are to be transformed by running the following 
+//operation on them as many times as required:
 
 // if X[i] > X[j] then X[i] = X[i] - X[j]
 
@@ -27,4 +28,26 @@
 
 // Additional notes:
 
-// There are performance tests consisted of very big numbers and arrays of size at least 30000. Please write an efficient algorithm to prevent timeout.
+// There are performance tests consisted of very big numbers and arrays of size at least 30000. Please write an 
+//efficient algorithm to prevent timeout.
+
+//for x.length
+//x2=[]
+//if x1[i] > x1[j]
+//x2[i] = x1[i] - x1[j]
+//
+
+var transformation = function (x) {
+	var result = 0;
+	for(var i = 0; i < x.length; i++) {
+		for(var j = 1; j < x.length; j++) {
+			if(x[i] > x[j]) {
+				result = x[i] - x[j]; 
+			}
+			else {
+				result = x[j] - x[i];
+			}
+		}
+	}
+	return result;
+}
