@@ -35,4 +35,24 @@
 
 var bubbleSort = function(array) {
   // Your code here.
+//compare every array[i]
+//if min =array[i]
+//tab.push(min)
+//compare the tab
+
+  var min = array[0];
+  var tab = [];
+var result = '';
+var i = 1;
+  	while(i < array.length) {
+		if(min > array[i]) {
+			min = array[i];
+  		}
+	tab.push(min)
+	i++;
+	}
+  
+return tab;
+
+  
 };
