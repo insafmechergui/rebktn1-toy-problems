@@ -1,7 +1,9 @@
-// Coding decimal numbers with factorials is a way of writing out numbers in a base system that depends on factorials, rather than powers of numbers.
+// Coding decimal numbers with factorials is a way of writing out numbers in a base system that depends 
+//on factorials, rather than powers of numbers.
 
 // In this system, the last digit is always 0 and is in base 0!.
-// The digit before that is either 0 or 1 and is in base 1!. The digit before that is either 0, 1, or 2 and is in base 2!.
+// The digit before that is either 0 or 1 and is in base 1!. The digit before that is either 0, 1, or 2 
+//and is in base 2!.
 
 // More generally, the nth-to-last digit is always 0, 1, 2, ..., or n and is in base n!.
 // Example :
@@ -16,8 +18,36 @@
 
 // 36! − 1 = 37199332678990121746799944815083519999999910 (base 10)
 
-// We will code two functions. The first one will code a decimal number and return a string with the factorial representation : dec2FactString(nb)
+// We will code two functions. The first one will code a decimal number and return a string with 
+//the factorial representation : dec2FactString(nb)
 
-// The second one will decode a string with a factorial representation and produce the decimal representation : factString2Dec(str).
+// The second one will decode a string with a factorial representation and produce the decimal 
+//representation : factString2Dec(str).
 
 // Given numbers will be positive.
+
+	//using recursion
+	//divide nb by 1, then 2, then 3.... until rest =0
+	//result = (nb % 1)  
+	//then the (result % 2) ;
+	//then result %3 ;
+	
+	//count = 0
+	//until result % n = 0  ; modulo * count!
+	//then the modulo * count!
+	//count++ until modulo = 0
+
+function dec2FactString(nb) {
+
+
+	var result = 0;
+	var count = 1
+
+	if( result < 0) {
+		return undefined;
+	}
+
+	result = nb / count;
+	count++;
+	return dec2FactString(result);
+}
