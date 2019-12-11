@@ -1,7 +1,9 @@
 /*
-Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not.
+Given two binary trees and imagine that when you put one of them to cover the other, some nodes of the 
+two trees are overlapped while the others are not.
 
-You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.
+You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node 
+values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.
 
 Example 1:
 
@@ -36,4 +38,30 @@ Note: The merging process must start from the root nodes of both trees.
  * @param {TreeNode} t2
  * @return {TreeNode}
  */
-var mergeTrees = function(t1, t2) {};
+var mergeTrees = function(t1, t2) {
+	//if t1 = null return t2
+	//if t2 = null return t1
+	// t3 = {}
+	//t3 = t1 value + t2 value
+	//t3.left = mergeTrees(t1.left, t2.left)
+	//t3.right = mergeTrees(t1.right, t2.right)
+
+	var t3 = {};
+
+	if(t1 === null) {
+		return t2;
+	}
+	
+	if(t2 === null) {
+		return t1;
+	}
+
+	for (var key in t3) { 
+		t3[key] = t1.val += t2.val;
+	}
+	
+	t3.left = mergeTrees(t1.left, t2.left);
+	t3.right = mergeTrees(t1.right, t2.right);
+
+	return t3;
+};
