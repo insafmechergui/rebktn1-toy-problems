@@ -33,8 +33,16 @@
 
 'use strict';
 
-var compose = function() {
+var compose = function(/*fct1, fct2*/...fcts) {
+	return (param)=>{ 
+		return fct1(fct2(param));
+	};
 };
 
-var pipe = function() {
+var pipe = function(...fcts) {
+	for(var i = 0; i < fcts.length; i ++) {
+		return (param)=>{ 
+			return fcts[i](param);
+		};
+	}
 };
