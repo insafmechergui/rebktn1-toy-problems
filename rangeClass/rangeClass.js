@@ -40,9 +40,19 @@
 
 
 var Range = function(start, end, step) {
+    this.start = start || null;
+    this.end = end || start;
+    this.step = step || 1; 
 };
 
 Range.prototype.size = function () {
+    var counter = 0;
+    if(this.start > this.end) {
+        for(var i = this.end; i < this.start; i= step - 1)
+            counter++;
+        }
+        return counter;
+    }
 };
 
 Range.prototype.each = function (callback) {
