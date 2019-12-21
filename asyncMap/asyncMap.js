@@ -39,4 +39,15 @@
 
 
 var asyncMap = function(tasks, callback) {
+  var result = [];
+  var count = 0;
+  for(var i = 0; i < tasks.length; i++) {
+    tasks[i] = (value) =>{
+      result[i] = value;
+      count++;
+    }
+    if(count = tasks.length) {
+      callback(result);
+    }
+  }
 };
