@@ -32,6 +32,7 @@ function evenOccurrence(array) {
 // if(!Array.isArray(nbr) && typeof(nbr) === "object" ) {
 //   for(var key in nbr) {
 //     if(obj[nbr]) {
+  // aa
 //       obj[nbr] = nbr
 //       console.log(obj[nbr])
 //     }
