@@ -12,4 +12,37 @@ longestRun("abcdefgh") // [ 0, 0 ]
 longestRun("abccccccc") // [ 2, 8 ]
 */
 
-function longestRun(string) {}
+function longestRun(string) {
+    var obj = {}
+    var array = [];
+    var count;
+    var lastCount = 0;
+
+    var firstCaracter = string[0];
+    if(string === "") {
+        return array = [0, 0]; //return [0, 0] for no runs
+    }
+    else {
+        for(var i = 0; i < string.length; i++) {
+            
+                count = 1
+
+            for(var j = 0; j < string.length; j++) {
+                if(string[i] === string[j]) {
+                    count++
+                }
+            }
+
+            if(count > lastCount) {
+                lastCount = count;
+                firstCaracter = string[i]
+            }
+
+        }
+    
+    }
+    var result;
+    // result = string.indexOf(firstCaracter);//start index
+    result = [string.indexOf(firstCaracter)];//start index
+    return result;
+}
