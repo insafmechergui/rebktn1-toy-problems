@@ -42,3 +42,16 @@ spiralTraversal([[ 1 ], [ 2 ], [ 3 ], [ 4 ]])	// [ 1, 2, 3, 4 ]
 
 spiralTraversal([[ 1, 2, 3, 4, 5, 6, 7 ]]) // [ 1, 2, 3, 4, 5, 6, 7 ]
 */
+/*
+result=[]
+
+ for arr[0][0]
+ result.push(i) 
+
+ for arr[0][i+1]
+ result.push(i[arr.length-1])
+
+ if(i === arr.length-1)
+ result.push(i[arr.length-1] until i[0] )
+
+ */
