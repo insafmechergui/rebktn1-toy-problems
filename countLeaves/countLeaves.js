@@ -22,7 +22,7 @@ root.countLeaves(); // 1
 root.addChild(new Tree()); 
 root.countLeaves(); // still 1 
 root.addChild(new Tree()); 
-root.children[0].addChild(new Tree()); 
+  root.children[0].addChild(new Tree()); 
 root.children[0].addChild(new Tree()); 
 root.children[0].children[0].addChild(new Tree()); 
 root.countLeaves(); // 3
@@ -34,6 +34,20 @@ var Tree = function(value) {
   this.children = [];
 };
 
+Tree.prototype.countLeaves = function() {
+  var newTree = new Tree();
+  var count = 0;
+  function treeLeaves(newTree) {
+    if (newTree.children.length === 0) {
+      count++;
+    }
+    for (var i = 0; i < newTree.children.length; i++) {
+      treeLeaves(newTree.children[i]);
+    }
+  }
+  treeLeaves(this);
+  return count;
+};
 /**
  * You shouldn't need to change anything below here, but feel free to look.
  */
@@ -50,7 +64,7 @@ Tree.prototype.addChild = function(child) {
   if (!this.isDescendant(child)) {
     this.children.push(child);
   } else {
-    throw new Error('That child is already a child of this tree');
+    throw new Error("That child is already a child of this tree");
   }
   // return the new child node for convenience
   return child;
@@ -84,6 +98,6 @@ Tree.prototype.removeChild = function(child) {
     // remove the child
     this.children.splice(index, 1);
   } else {
-    throw new Error('That node is not an immediate child of this tree');
+    throw new Error("That node is not an immediate child of this tree");
   }
 };
