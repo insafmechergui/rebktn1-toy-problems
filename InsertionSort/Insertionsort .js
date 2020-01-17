@@ -25,4 +25,6 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var insertionSortList = function(head) {};
+var insertionSortList = function(head) {
+	
+};
