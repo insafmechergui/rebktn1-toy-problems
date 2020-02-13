@@ -26,4 +26,17 @@ NOTE: DO NOT use JavaScript’s built-in sorting function (Array.prototype.sort)
 
 function quickSort(arr) {
   // your code here...
+
+  var rightSort = arr.slice(arr.length / 2);
+  var leftSort = arr.slice(0, arr.length / 2);
+  var minRight = rightSort[0];
+  var res = [];
+  for (var i = 0; i <= rightSort.length; i++) {
+    if (minRight > rightSort[i]) {
+      minRight = rightSort[i];
+    }
+  }
+  console.log(res);
 }
+
+console.log(quickSort([2, 1, 4, 7, 5]));
