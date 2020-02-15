@@ -20,9 +20,17 @@ var multiply = function(x, y) {
   return result;
 };
 console.log(multiply(3, 3));
+
 var divide = function(x, y) {
   // your code here...
+  let result = 1;
+  for (let i = 0; i < x; i++) {
+    x -= y;
+    result++;
+  }
+  return result;
 };
+console.log(divide(4, 2));
 
 var modulo = function(x, y) {
   // your code here...
@@ -32,4 +40,4 @@ var modulo = function(x, y) {
   }
   return x;
 };
-console.log(modulo(5, 2));
+console.log(modulo(6, 2));
