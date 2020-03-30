@@ -8,4 +8,13 @@
 
 var firstNonRepeatedCharacter = function(string) {
   // TODO: your solution here
+  for (var i = 0; i < string.length; i++) {
+    //get the character
+     var character = string.charAt(i);
+     //get the character at a specific index
+     if (string.indexOf(character) == i && string.indexOf(character, i + 1) == -1) {
+       return character;
+     }
+    
+   }
 };
