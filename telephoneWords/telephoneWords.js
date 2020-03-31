@@ -23,7 +23,7 @@ function telephoneWords(digitString) {
         result += "1";
         break;
       case "2":
-        result += "A";
+        result += "A"
         result += "B";
         result += "C";
         break;
