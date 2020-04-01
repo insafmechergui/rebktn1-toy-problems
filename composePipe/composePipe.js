@@ -46,10 +46,10 @@ var compose = function(func1, func2) {
   welcome('phillip')
 
 
-var pipe = function(func1, /*func2,*/ func3) {
+var pipe = function(func1, func2, func3) {
     return function(number){
         var result = func1(number)
-        //result = func2(result)
+        result = func2(result)
         return func3(result)
     }
 };
