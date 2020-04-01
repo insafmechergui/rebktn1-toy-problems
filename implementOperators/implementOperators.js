@@ -31,25 +31,17 @@ var divide = function(x, y) {
     result++;
   }
   return result;
-<<<<<<< HEAD
  
-=======
->>>>>>> 2e894d3bd734dc92eb904bb051a036e08e1dfa0a
 };
 console.log(divide(4, 2));
 
 var modulo = function(x, y) {
   // your code here...
   var result = 0;
-<<<<<<< HEAD
   
   while(result <= x ) {
     x -= y;
     result++
-=======
-  for (var i = 0; i < y; i++) {
-    x -= y;
->>>>>>> 2e894d3bd734dc92eb904bb051a036e08e1dfa0a
   }
   return x;
 };
