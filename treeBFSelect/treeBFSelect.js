@@ -37,9 +37,19 @@ var Tree = function(value) {
 
 
 
-Tree.prototype.BFSelect = function(filter) {
+Tree.prototype.BFSelect = function(filter, depth) {
+	var tab = [];
   // return an array of values for which the function filter(value, depth) returns true
+  	if(filter(this.value, depth)) {
+  		tab.push(this.value);
+  	}
+  	for(var i = 0; i < this.children.length; i++) {
+  		this.children[i].BFSelect(filter, depth + 1)
+  	}
+  	return tab;
 };
+
+
 
 /**
  * You shouldn't need to change anything below here, but feel free to look.

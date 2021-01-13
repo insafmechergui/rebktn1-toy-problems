@@ -14,4 +14,15 @@
 
 var allAnagrams = function(string) {
   // Your code here.
-};
+  var obj={};
+
+  (function anagram(ana,str){
+    if (str === ""){
+      obj[ana]=1
+    }
+  for(var i = 0;i < str.length;i++){
+  anagram(ana+str[i], str.slice(0,i)+str.slice(i+1))
+  }    
+  })("", string);
+  return Object.keys(obj)
+ };
